@@ -37,6 +37,13 @@
   }
 }
 
-.job{
+.App button{
   color: aqua;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: darkolivegreen;
+  margin: 10px;
+}
+.App h1{
+  color: brown;
 }
