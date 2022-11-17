@@ -27,6 +27,9 @@
 .App-link {
   color: #61dafb;
 }
+.green{
+  color: green;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -37,6 +40,21 @@
   }
 }
 
-.job{
-  color: aqua;
+.App button{
+  background-color: blueviolet;
+  color: azure;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+.App input{
+  padding: 10px;
+  background-color: gray;
+  color: white;
+  font-size: 15px;
+  border-radius: 5px;
+  margin: 10px;
+}
+.addTask{
+  background-color: darkgray;
 }
