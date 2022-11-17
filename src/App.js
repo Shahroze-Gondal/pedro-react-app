@@ -31,6 +31,16 @@ function App() {
     }))
   }
 
+  const changeText = (id, event) =>{
+    setTodoList(todoList.map(item=>{
+      if (item.id === id){
+        return {...item, taskName:event.target.value};
+      }else{
+        return item;
+      }
+    }))
+  }
+
   return (
     <div className="App">
       <div className='addTask'>
@@ -40,10 +50,11 @@ function App() {
       <div className='list'>
           {todoList.map(item=>{
             return (
-              <div style={{backgroundColor: item.completed? 'green': 'white'}}>
+              <div style={{backgroundColor: item.completed? 'green': 'yellow'}}>
                 <h1>{item.taskName}</h1>
                 <button onClick={()=>makeGreen(item.id)}>Change Color</button>
                 <button onClick={()=>deleteItem(item.id)}>Delete</button>
+                <input onChange={(event)=>changeText(item.id, event)} value={item.taskName}/>
               </div>
             )
           })}

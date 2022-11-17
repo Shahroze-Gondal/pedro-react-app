@@ -30,6 +30,9 @@
 .green{
   color: green;
 }
+.honey{
+  background-color:silver;
+}
 
 @keyframes App-logo-spin {
   from {
@@ -38,6 +41,14 @@
   to {
     transform: rotate(360deg);
   }
+}
+.input{
+  background-color: #61dafb;
+}
+.list{
+  width: 60%;
+  text-align: center;
+  margin: auto;
 }
 
 .App button{
