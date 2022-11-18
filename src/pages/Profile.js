@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react';
+import ChangeProfile from './ChangeProfile';
+import { AppContext } from '../App';
 
-const Profile = () => {
+const Profile = (props) => {
+    const {username} = useContext(AppContext);
   return (
     <div>
-      <h1>This is the Profile page</h1>
+      profile: username is {username}
+      <ChangeProfile />
     </div>
   )
 }
