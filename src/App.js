@@ -1,24 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [catFact, setCatFact] = useState('')
+  const [api_data, setApi] =useState('')
   
-  const fetchCatFact=()=>{
-    fetch("https://catfact.ninja/fact")
+  // const fetchData=()=>{
+  //   fetch(`https://api.agify.io/?name=${name}`)
+  //   .then((res) => res.json())
+  //   .then((data)=>{
+  //     setPredictedAge(data);
+  //   })
+  // };
+
+  const fetchData=(name)=>{
+    fetch(`https://excuser.herokuapp.com/v1/excuse/${name}/`)
     .then((res) => res.json())
     .then((data)=>{
-      setCatFact(data.fact)
+      console.log(data[0])
+      setApi(data[0].excuse);
     })
   };
-  useEffect(()=>{
-    fetchCatFact();
-  },[])
 
   return (
     <div className="App">
-      <div><button onClick={fetchCatFact}>Cat fact</button></div>
-      <h1>{catFact}</h1>
+      <h1>Generate an excuse</h1>
+      <button onClick={()=>fetchData('party')}>party</button>
+      <button onClick={()=>fetchData('family')}>family</button>
+      <button onClick={()=>fetchData('office')}>office</button>
+      {api_data}
+      {/* <input placeholder='shahroze' onChange={(event)=>{setName(event.target.value)}}/>
+      <button onClick={fetchData}>Predict age</button>
+      <h1>Predicted name: {predictedAge?.name}</h1>
+      <h1>Predicted age: {predictedAge?.age}</h1> */}
     </div>
   );
 }
