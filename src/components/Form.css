@@ -1,0 +1,16 @@
+.form{
+    text-align: center;
+    background-color: gray;
+    width: 30%;
+    margin: auto;
+}
+.form input{
+    background-color:azure;
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    width: 100%;
+}
+.form .submit{
+    width: 107%;
+}
