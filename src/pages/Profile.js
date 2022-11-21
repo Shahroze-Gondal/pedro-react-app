@@ -1,13 +1,12 @@
-import React, { useContext } from 'react';
-import ChangeProfile from './ChangeProfile';
-import { AppContext } from '../App';
+import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { Axios } from 'axios';
 
 const Profile = (props) => {
-    const {username} = useContext(AppContext);
+
+    // console.log({data?.fact});
   return (
     <div>
-      profile: username is {username}
-      <ChangeProfile />
     </div>
   )
 }
